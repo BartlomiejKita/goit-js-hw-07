@@ -21,7 +21,7 @@ const result = galleryItems
 
 gallery.insertAdjacentHTML("afterbegin", result);
 
-gallery.onclick = function (event) {
+gallery.onclick = function newWindow(event) {
 	event.preventDefault();
 	if (event.target.nodeName !== "IMG") {
 		return;
@@ -30,7 +30,7 @@ gallery.onclick = function (event) {
 		`<img src = ${event.target.dataset.source}>`
 	);
 	modal.show();
-	window.addEventListener("keydown", function (event) {
+	window.addEventListener("keydown", function quit(event) {
 		if (event.key === "Escape") {
 			modal.close();
 		}
